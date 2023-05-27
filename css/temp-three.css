@@ -86,7 +86,7 @@ a {
 
 @media (min-width : 992px) {
     .container {
-        width: 970px;
+        width: 967px;
     }
 }
 
@@ -847,6 +847,7 @@ section .landing .container .right img {
 .testimonials .box img {
     border-radius: 50%;
     width: 70px;
+    height: 70px;
     position: absolute;
     right: -10px;
     top: -18px;
@@ -1083,7 +1084,9 @@ section .landing .container .right img {
 }
 
 .our-skills .container img {
-    max-width: 35%;
+    border-radius: 30px;
+    max-width: 50%;
+    margin-right: 40px;
 }
 
 .our-skills .container .parent {
@@ -1138,7 +1141,7 @@ section .landing .container .right img {
 .how .container {
     padding: 60px 0;
     display: flex;
-    align-items: center;
+
     justify-content: space-evenly;
 
 }
@@ -1157,8 +1160,25 @@ section .landing .container .right img {
     }
 }
 
-.how .container>img {
-    width: 35%;
+.how .container>.new {
+    flex-basis: 50%;
+    margin-right: 20px;
+}
+
+@media (max-width : 768px) {
+    .how .container>.new {
+        display: none;
+    }
+}
+
+.how .container>.new img {
+    width: 100%;
+    border-radius: 30px;
+    height: 100%;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
 }
 
 .how .container .parent {
@@ -1167,9 +1187,14 @@ section .landing .container .right img {
 
 .how .container .parent .box {
     background-color: whitesmoke;
+    border-radius: 30px;
     margin-bottom: 25px;
     padding: 15px;
     position: relative;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
 }
 
 .how .container .parent .box::after {
@@ -1187,6 +1212,11 @@ section .landing .container .right img {
 .how .container .parent .box:hover::after {
     width: 100%;
     height: 100%;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
 }
 
 .how .container .parent h3 {
@@ -1201,7 +1231,12 @@ section .landing .container .right img {
 }
 
 .how .container .parent .in img {
-    width: 15%;
+    width: 25%;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
 }
 
 .how .container .parent .in p {
@@ -1242,8 +1277,12 @@ section .landing .container .right img {
 }
 
 .latest .container img {
-    width: 40%;
-    border-radius: 50%;
+    width: 50%;
+    border-radius: 10%;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
 }
 
 .latest .container .parent {
@@ -1533,17 +1572,29 @@ section .landing .container .right img {
     color: var(--main-color);
     display: flex;
     justify-content: space-between;
-    padding: 5px;
+    padding: 15px;
 }
 
 .top-videos .container aside>.box:nth-child(1) i {
     color: var(--main-color);
+
 }
 
-.top-videos .container aside>.box:nth-child(n+1) {
+.top-videos .container aside>.box:nth-child(n+2) {
     padding: 15px;
     margin: 2px 0;
     background-color: white;
+    cursor: pointer;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+}
+
+.top-videos .container aside>.box:nth-child(n+1):hover {
+    color: var(--main-color);
+    font-weight: bold;
 }
 
 .top-videos .container aside>.box:nth-child(n+1) p {
@@ -1564,13 +1615,18 @@ section .landing .container .right img {
     padding: 4px 4px 7px;
 }
 
+.top-videos .container main video {
+    height: 530px;
+    width: 100%;
+    margin-bottom: 7px;
+
+}
+
 @media (max-width : 767px) {
-    .top-videos .container main {
-        display: none;
-    }
 
     .top-videos .container {
         justify-content: center;
+        flex-direction: column;
     }
 
     .top-videos .container aside {
@@ -1595,35 +1651,13 @@ section .landing .container .right img {
     align-items: center;
 }
 
-@media (max-width: 767px) {
-    .discount {
-        flex-direction: column;
-    }
 
-    .discount main {
-        min-height: 50vh;
-    }
-
-
-    .discount aside {
-        flex-basis: 100%;
-    }
-
-    .discount aside form input {
-        min-width: 100%;
-    }
-
-    .discount aside form textarea {
-        min-width: 100%;
-
-    }
-}
 
 .discount main {
     flex-basis: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
     animation: change 10s infinite linear;
@@ -1631,18 +1665,10 @@ section .landing .container .right img {
     height: 100vh;
     position: relative;
     z-index: 1;
+    padding-top: 20px;
 }
 
-.discount main::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #2196f37a;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
+
 
 .discount main h2 {
     margin-bottom: 20px;
@@ -1652,19 +1678,21 @@ section .landing .container .right img {
 
 .discount main p {
     margin-bottom: 20px;
-    color: white;
+    color: black;
+    font-weight: bold;
+    line-height: 1.7;
 }
 
 @keyframes change {
 
     0%,
     100% {
-        background-image: url(../images/lion1-17335_640.jpg);
+        background-image: url(../images/dis1.jpg);
 
     }
 
     50% {
-        background-image: url(../images/african-lion.jpg);
+        background-image: url(../images/dis2.jpg);
     }
 }
 
@@ -1689,12 +1717,13 @@ section .landing .container .right img {
 }
 
 .discount aside form input {
-    background-color: #d1c8c873;
+    background-color: #eae6e640;
     border: none;
     padding: 10px;
     margin-bottom: 10px;
     border-bottom: 1px solid #eee;
     width: 50%;
+    box-shadow: 0px 0px 5px 0px #999;
 }
 
 .discount aside form input:not(:last-child):focus,
@@ -1723,18 +1752,19 @@ section .landing .container .right img {
 }
 
 .discount aside form textarea {
-    background-color: #f5f0f073;
-    border-bottom: 1px solid #eee;
+    background-color: #eae6e640;
+    border-bottom: 1px solid #eae6e6;
     width: 50%;
     margin-bottom: 10px;
     padding: 10px;
     border: none;
     height: 150px;
     resize: none;
+    box-shadow: 0px 0px 5px 0px #999;
 }
 
 .discount aside form ::placeholder {
-    color: #999;
+    color: #999888;
 }
 
 /* end discount */
@@ -1811,3 +1841,26 @@ footer .col3 ul li i {
 }
 
 /* end footer  */
+@media (max-width: 767px) {
+    .discount {
+        flex-direction: column;
+    }
+
+    .discount main {
+        min-height: 50vh;
+    }
+
+
+    .discount aside {
+       width: 80%;
+    }
+
+    .discount aside form input {
+        min-width: 100%;
+    }
+
+    .discount aside form textarea {
+        min-width: 100%;
+
+    }
+}
